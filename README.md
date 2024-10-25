@@ -1,2 +1,2 @@
-# Pok-Dex
+# PokeDex
 Simple Pokédex app 
