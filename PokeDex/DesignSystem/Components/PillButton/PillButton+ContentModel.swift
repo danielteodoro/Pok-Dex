@@ -6,7 +6,7 @@ public extension PillButton {
         var title: String
         var buttonType: ButtonType
         var shouldPresentChevron: Bool
-        
+
         init(
             title: String,
             buttonType: ButtonType,
@@ -17,7 +17,7 @@ public extension PillButton {
             self.shouldPresentChevron = shouldPresentChevron
         }
     }
-    
+
     enum ButtonType: Hashable {
         case primary
         case secondary

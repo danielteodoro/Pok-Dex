@@ -3,7 +3,7 @@ import SwiftUI
 struct MainTabView: View {
     @State private var selection = 0
     let pokemonListView: PokedexListView = .init()
-    
+
     var body: some View {
         TabView(selection: $selection) {
             pokemonListView
@@ -12,14 +12,14 @@ struct MainTabView: View {
                 Icon(selection == 0 ? .pokeballFilled : .pokeballOutline)
             }
                 .tag(0)
-            
+
             Text("Region")
                 .tabItem {
                     Icon(selection == 1 ? .pokeRegionFilled : .pokeRegionOutline)
                     Text("Region")
                 }
                 .tag(1)
-            
+
             Text("Favorites")
                 .tabItem {
                     Icon(selection == 2 ? .favoritesFilled : .favoritesOutline)
@@ -28,7 +28,6 @@ struct MainTabView: View {
                 .tag(2)
         }
         .tint(.blueTintColor)
-        
     }
 }
 

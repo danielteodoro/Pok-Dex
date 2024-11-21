@@ -7,7 +7,7 @@ public enum IconAsset {
     case pokeRegionFilled
     case favoritesOutline
     case favoritesFilled
-    
+
     var image: ImageResource {
         switch self {
         case .pokeballOutline: return ImageResource(name: "pokeball-outline", bundle: .main)

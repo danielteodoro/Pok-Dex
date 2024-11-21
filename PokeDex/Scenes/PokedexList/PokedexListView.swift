@@ -1,21 +1,18 @@
 import SwiftUI
 
 struct PokedexListView: View {
-    @ObservedObject private var vm: PokedexListViewModel = .init()
-    
+    @ObservedObject private var viewModel: PokedexListViewModel = .init()
+
     var body: some View {
         VStack {
-            List(vm.texts) { text in
+            List(viewModel.texts) { text in
                 Text(text)
             }
             Button("Change") {
-                withAnimation{
-                    vm.changeText()
+                withAnimation {
+                    viewModel.changeText()
                 }
             }
-        }
-        .onAppear() {
-
         }
     }
 }

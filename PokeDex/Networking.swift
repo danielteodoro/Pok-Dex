@@ -2,7 +2,7 @@ import Foundation
 import Network
 
 // USAGE:
-//let networkPerformer = NetworkOperationPerformer()
+// let networkPerformer = NetworkOperationPerformer()
 //
 //    Task {
 //        // Test case: Attempt a network operation with a 5-second timeout.

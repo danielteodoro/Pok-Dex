@@ -20,9 +20,9 @@ public enum PokemonType: String, Codable {
     case rock
     case steel
     case water
-    
+
     // MARK: - Colors
-    
+
     var typeBackgroundColor: Color {
         switch self {
         case .bug: return .bugTypeColor
@@ -45,7 +45,7 @@ public enum PokemonType: String, Codable {
         case .water: return .waterTypeColor
         }
     }
-    
+
     var typeForegroundColor: Color {
         switch self {
         case .bug: return .black

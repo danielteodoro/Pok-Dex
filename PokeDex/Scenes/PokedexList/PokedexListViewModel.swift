@@ -8,7 +8,7 @@ class PokedexListViewModel: ObservableObject {
         "Hi, Planet",
         "Bye, moon"
     ]
-    
+
     func changeText() {
         texts.sort(by: { $0.count < $1.count })
         print("Changed")

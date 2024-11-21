@@ -2,10 +2,10 @@ import SwiftUI
 
 public struct PillButton: View, ContentConfigurable {
     typealias ButtonAction = (() -> Void)
-    
+
     var contentModel: ContentModel
     var action: ButtonAction?
-    
+
     public var body: some View {
         Button {
             action?()
@@ -14,7 +14,7 @@ public struct PillButton: View, ContentConfigurable {
             HStack(alignment: .center, spacing: Spacing.xSmall) {
                 Text(contentModel.title)
                     .frame(maxWidth: .infinity)
-                    
+
                 if contentModel.shouldPresentChevron {
                     Image(systemName: "chevron.down")
                 }
@@ -22,7 +22,7 @@ public struct PillButton: View, ContentConfigurable {
         }
         .buttonStyle(.pokemonType(buttonType: contentModel.buttonType))
     }
-    
+
     init(
         contentModel: ContentModel,
         action: (() -> Void)? = nil
@@ -38,7 +38,7 @@ public struct PillButton: View, ContentConfigurable {
         buttonType: .pokemonType(.fire),
         shouldPresentChevron: true
     )
-    
+
     VStack {
         HStack(alignment: .center) {
             Spacer()
@@ -51,21 +51,21 @@ public struct PillButton: View, ContentConfigurable {
                         shouldPresentChevron: false
                     )
                 )
-                
+
                 PillButton(
                     contentModel: .init(
                         title: "Secondary",
                         buttonType: .secondary
                     )
                 )
-                
+
                 PillButton(
                     contentModel: .init(
                         title: "Disabled",
                         buttonType: .disabled
                     )
                 )
-                
+
                 PillButton(
                     contentModel: .init(
                         title: "All types",
@@ -73,21 +73,21 @@ public struct PillButton: View, ContentConfigurable {
                         shouldPresentChevron: true
                     )
                 )
-                
+
                 PillButton(
                     contentModel: .init(
                         title: "Fire",
                         buttonType: .pokemonType(.fire)
                     )
                 )
-                
+
                 PillButton(
                     contentModel: .init(
                         title: "Water",
                         buttonType: .pokemonType(.water)
                     )
                 )
-                
+
                 PillButton(
                     contentModel: .init(
                         title: "Grass",

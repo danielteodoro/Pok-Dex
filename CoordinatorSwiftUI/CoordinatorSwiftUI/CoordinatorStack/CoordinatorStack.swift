@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct CoordinatorStack<CoordinatorPage: Coordinatable>: View {
-    
+
     @State private var coordinator = Coordinator<CoordinatorPage>()
-    
+
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            
+
         }
     }
 }

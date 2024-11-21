@@ -9,23 +9,23 @@ import SwiftUI
 
 @Observable
 class Coordinator<CoordinatorPage: Coordinatable> {
-    
+
     var path: NavigationPath = NavigationPath()
     var sheet: CoordinatorPage?
     var fullScreenCover: CoordinatorPage?
-    
+
     enum PushType {
         case link
         case sheet
         case fullScreenCover
     }
-    
+
     enum PopType {
         case link(last: Int)
         case sheet
         case fullScreenCover
     }
-    
+
     func push(_ page: CoordinatorPage, type: PushType = .link) {
         switch type {
         case .link:
@@ -36,7 +36,7 @@ class Coordinator<CoordinatorPage: Coordinatable> {
             fullScreenCover = page
         }
     }
-    
+
     func pop(type: PopType) {
         switch type {
         case .link(let last):
@@ -47,7 +47,7 @@ class Coordinator<CoordinatorPage: Coordinatable> {
             fullScreenCover = nil
         }
     }
-    
+
     func popToRoot() {
         path.removeLast(path.count)
     }

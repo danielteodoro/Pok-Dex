@@ -9,12 +9,12 @@ extension ButtonStyle where Self == PillButtonStyle {
 struct PillButtonStyle: ButtonStyle {
     enum Constants {
         static let minWidth: CGFloat = 156
-        static let scaleEffectMin: CGFloat = 0.9
+        static let scaleEffectMin: CGFloat = 0.95
         static let scaleEffectDuration: CGFloat = 0.15
     }
-    
+
     var buttonType: PillButton.ButtonType
-    
+
     var backgroundColor: Color {
         switch buttonType {
         case .primary:
@@ -29,7 +29,7 @@ struct PillButtonStyle: ButtonStyle {
             return pokemonType.typeBackgroundColor
         }
     }
-    
+
     var foregroundColor: Color {
         switch buttonType {
         case .primary:
@@ -44,7 +44,7 @@ struct PillButtonStyle: ButtonStyle {
             return pokemonType.typeForegroundColor
         }
     }
-    
+
     var shouldDisplayBorder: Bool {
         switch buttonType {
         case .secondary:
