@@ -84,8 +84,6 @@ struct PillButtonStyle: ButtonStyle {
                 value: configuration.isPressed
             )
     }
-    
-    
 }
 
 #Preview {

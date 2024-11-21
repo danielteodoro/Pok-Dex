@@ -20,7 +20,7 @@ public struct PillButton: View, ContentConfigurable {
                 }
             }
         }
-        .buttonStyle(PillButtonStyle(buttonType: contentModel.buttonType))
+        .buttonStyle(.pokemonType(buttonType: contentModel.buttonType))
     }
     
     init(
@@ -30,16 +30,7 @@ public struct PillButton: View, ContentConfigurable {
         self.contentModel = contentModel
         self.action = action
     }
-    
-    mutating func action(_ action: @escaping ButtonAction) -> Self {
-        self.action = action
-        
-        return self
-    }
 }
-
-
-
 
 #Preview {
     let dragonButtonContent: PillButton.ContentModel = .init(
