@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct PokeDexApp: App {
+    @State private var selection = 0
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }

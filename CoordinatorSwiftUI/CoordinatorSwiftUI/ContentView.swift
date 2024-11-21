@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  PokeDex
+//  CoordinatorSwiftUI
 //
-//  Created by Daniel Teodoro on 26/10/24.
+//  Created by Daniel Teodoro on 11/11/24.
 //
 
 import SwiftUI
