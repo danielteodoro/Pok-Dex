@@ -77,8 +77,8 @@ public actor NetworkOperationPerformer {
                 }
 
                 // Return true if the network becomes available, otherwise false after the timeout.
-                for await result in group {
-                    if result { return true }
+                for await result in group where result {
+                    return true
                 }
                 return false
             }

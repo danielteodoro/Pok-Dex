@@ -33,12 +33,6 @@ public struct PillButton: View, ContentConfigurable {
 }
 
 #Preview {
-    let dragonButtonContent: PillButton.ContentModel = .init(
-        title: "Fire",
-        buttonType: .pokemonType(.fire),
-        shouldPresentChevron: true
-    )
-
     VStack {
         HStack(alignment: .center) {
             Spacer()
