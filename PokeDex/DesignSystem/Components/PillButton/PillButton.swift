@@ -3,12 +3,19 @@ import SwiftUI
 public struct PillButton: View, ContentConfigurable {
     typealias ButtonAction = (() -> Void)
 
-    var contentModel: ContentModel
+    private var contentModel: ContentModel
     var action: ButtonAction?
+    @State private var shouldAnimateChevron: Bool = false
 
     public var body: some View {
         Button {
             action?()
+            
+            // Chevron animation control
+            shouldAnimateChevron = true
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                shouldAnimateChevron = false
+            }
         }
         label: {
             HStack(alignment: .center, spacing: Spacing.xSmall) {
@@ -17,6 +24,7 @@ public struct PillButton: View, ContentConfigurable {
 
                 if contentModel.shouldPresentChevron {
                     Image(systemName: "chevron.down")
+                        .symbolEffect(.wiggle.down, options: .repeat(1), isActive: shouldAnimateChevron)
                 }
             }
         }
