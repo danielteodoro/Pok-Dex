@@ -10,7 +10,7 @@ public struct PillButton: View, ContentConfigurable {
     public var body: some View {
         Button {
             action?()
-            
+
             // Chevron animation control
             shouldAnimateChevron = true
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
@@ -23,8 +23,10 @@ public struct PillButton: View, ContentConfigurable {
                     .frame(maxWidth: .infinity)
 
                 if contentModel.shouldPresentChevron {
-                    Image(systemName: "chevron.down")
-                        .symbolEffect(.wiggle.down, options: .repeat(1), isActive: shouldAnimateChevron)
+                    Icon(.chevronDown)
+                        .offset(x: 0, y: shouldAnimateChevron ? 2.0 : 0)
+                        .animation(.easeInOut, value: shouldAnimateChevron)
+                        
                 }
             }
         }
